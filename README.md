@@ -7,7 +7,7 @@ is to demonstrate your knowledge in development practices, tools and techniques 
 ### Csv format. 
 
 #### Fields:
-* Time with milliseconds (set format for excel dd/mm/yyyy hh:mm:ss.000)
+* Time with milliseconds (set format for Excel dd/mm/yyyy hh:mm:ss.000)
 * Quantity 
 * Price
 

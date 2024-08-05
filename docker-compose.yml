@@ -1,0 +1,18 @@
+﻿services:
+  web.api:
+    image: web.api
+    build:
+      context: .
+      dockerfile: Web.API/Dockerfile
+
+  web.api-1:
+    image: web.api-1
+    build:
+      context: .
+      dockerfile: Web.API/Dockerfile
+
+  serices:
+    image: serices
+    build:
+      context: .
+      dockerfile: Serices/Dockerfile

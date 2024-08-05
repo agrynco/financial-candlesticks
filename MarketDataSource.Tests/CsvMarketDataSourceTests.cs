@@ -1,6 +1,6 @@
 ﻿namespace MarketDataSource.Tests;
 
-using CsvMarketDataSource;
+using MarketDataSource;
 using FluentAssertions;
 using Xunit;
 

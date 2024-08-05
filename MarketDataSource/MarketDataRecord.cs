@@ -1,4 +1,4 @@
-﻿namespace CsvMarketDataSource;
+﻿namespace MarketDataSource;
 
 public record MarketDataRecord
 {

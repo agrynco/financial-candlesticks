@@ -1,4 +1,4 @@
-﻿using CsvMarketDataSource;
+﻿using MarketDataSource;
 using FluentAssertions;
 using MarketDataSource.Tests;
 using Xunit;
@@ -6,7 +6,7 @@ using Xunit;
 public class FinancialCandlesticksBuilderTests
 {
 	private readonly FinancialCandlesticksBuilder _builder;
-					 
+
 	public FinancialCandlesticksBuilderTests()
 	{
 		// Initialize the FinancialCandlesticksBuilder here.
@@ -19,17 +19,17 @@ public class FinancialCandlesticksBuilderTests
 	{
 		// Arrange
 		string testDataFilePath = TestUtilities.GetTestDataFilePath();
-		var sut = new CsvMarketDataSource.CsvMarketDataSource(new CsvMarketDataSourceParams
+		var sut = new MarketDataSource.CsvMarketDataSource(new CsvMarketDataSourceParams
 		{
 			FilePath = testDataFilePath
 		});
-		
-		IList<MarketDataRecord> marketDataRecords = sut.GetData();
+
+		var marketDataRecords = sut.GetData();
 
 		var builder = new FinancialCandlesticksBuilder();
 
 		// Act
-		var result = builder.Build(marketDataRecords);
+		var result = FinancialCandlesticksBuilder.Build(marketDataRecords);
 
 		// Assert
 		result.Should().NotBeNull();

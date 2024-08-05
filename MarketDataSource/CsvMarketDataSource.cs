@@ -1,4 +1,4 @@
-﻿namespace CsvMarketDataSource;
+﻿namespace MarketDataSource;
 
 using System.Globalization;
 
@@ -11,7 +11,7 @@ public class CsvMarketDataSource : IMarketDataSource
 		_marketDataSourceParams = marketDataSourceParams;
 	}
 
-	public IList<MarketDataRecord> GetData()
+	public IList<MarketDataRecord> GetData(DateTime? from = null, DateTime? to = null)
 	{
 		var records = new List<MarketDataRecord>();
 		using var reader = new StreamReader(_marketDataSourceParams.FilePath);
@@ -25,12 +25,18 @@ public class CsvMarketDataSource : IMarketDataSource
 			}
 
 			MarketDataRecord record = ParseCsvToMarketDataRecord(line);
+
+			if (from.HasValue && record.Time < from.Value) 
+				continue;
+
+			if (to.HasValue && record.Time > to.Value) 
+				continue;
+
 			records.Add(record);
 		}
 
 		return records;
 	}
-
 	private MarketDataRecord ParseCsvToMarketDataRecord(string csvLine)
 	{
 		string[] fields = csvLine.Split(_marketDataSourceParams.Delimiter);

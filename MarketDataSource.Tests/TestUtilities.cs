@@ -1,6 +1,6 @@
-﻿using System.Reflection;
+﻿namespace MarketDataSource.Tests;
 
-namespace MarketDataSource.Tests;
+using System.Reflection;
 
 public static class TestUtilities
 {

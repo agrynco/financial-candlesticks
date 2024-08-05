@@ -1,6 +1,6 @@
-﻿namespace CsvMarketDataSource;
+﻿namespace MarketDataSource;
 
 public interface IMarketDataSource
 {
-	IList<MarketDataRecord> GetData();
+	IList<MarketDataRecord> GetData(DateTime? from = null, DateTime? to = null);
 }
