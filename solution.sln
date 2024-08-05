@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarketDataSource", "MarketDataSource\MarketDataSource.csproj", "{42DB3B49-3C7C-413D-9D74-2AC3A62B9B32}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{F370FB4A-C945-4D32-ABCC-A22D00198F57}"
+	ProjectSection(SolutionItems) = preProject
+		MarketTestData.csv = MarketTestData.csv
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarketDataSource.Tests", "MarketDataSource.Tests\MarketDataSource.Tests.csproj", "{E98C6F7F-A6DB-4F4D-B293-852FE2D2F88E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{42DB3B49-3C7C-413D-9D74-2AC3A62B9B32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42DB3B49-3C7C-413D-9D74-2AC3A62B9B32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42DB3B49-3C7C-413D-9D74-2AC3A62B9B32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42DB3B49-3C7C-413D-9D74-2AC3A62B9B32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E98C6F7F-A6DB-4F4D-B293-852FE2D2F88E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E98C6F7F-A6DB-4F4D-B293-852FE2D2F88E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E98C6F7F-A6DB-4F4D-B293-852FE2D2F88E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E98C6F7F-A6DB-4F4D-B293-852FE2D2F88E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
