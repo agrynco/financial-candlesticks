@@ -1,12 +1,12 @@
 <h1>Financial Candle Sticks</h1>
 
-<table style="width: 100%">
+<table class="candlesticks">
   <thead>
   <tr>
     <th>Open</th>
     <th>Open Time</th>
-    <th>Open</th>
     <th>Close</th>
+    <th>Close Time</th>
     <th>High</th>
     <th>Low</th>
   </tr>
@@ -14,10 +14,10 @@
   <tbody>
   <tr *ngFor="let candle of candleSticks"
       [ngClass]="{ 'going-up': candle.close > candle.open, 'going-down': candle.close < candle.open }">
-    <td>{{ candle.open }}</td>
-    <td>{{ candle.openTime }}</td>
-    <td>{{ candle.close }}</td>
-    <td>{{ candle.closeTime }}</td>
+    <td class="mono-font">{{ candle.open }}</td>
+    <td>{{ candle.openTime | date:'MMM d, y, HH:mm' }}</td>
+    <td class="mono-font">{{ candle.close }}</td>
+    <td>{{ candle.closeTime | date:'MMM d, y, HH:mm' }}</td>
     <td>{{ candle.high }}</td>
     <td>{{ candle.low }}</td>
   </tr>

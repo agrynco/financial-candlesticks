@@ -2,12 +2,12 @@ import {Component, OnInit} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {CandleSticksGetResponse, CandleSticksService} from "./candle-sticks.service";
 import {CandleStick} from "./candle.stick";
-import {NgClass, NgForOf} from "@angular/common";
+import {DatePipe, NgClass, NgForOf} from "@angular/common";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgForOf, NgClass],
+  imports: [RouterOutlet, NgForOf, NgClass, DatePipe],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

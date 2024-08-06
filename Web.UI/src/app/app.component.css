@@ -1,7 +1,60 @@
-.going-up{
-  color: green;
+h1 {
+  color: cornflowerblue;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
 }
 
-.going-down{
+.going-up {
+  color: greenyellow;
+}
+
+.going-down {
   color: red;
+}
+
+.candlesticks {
+  width: 100%;
+  border: 2px solid greenyellow;
+  color: aliceblue;
+}
+
+table.candlesticks {
+  border-collapse: collapse;
+}
+
+table.candlesticks thead tr th {
+  color: cornflowerblue;
+  background-color: black;
+  text-align: left;
+  font-size: x-large;
+  border-bottom: 2px solid greenyellow;
+}
+
+table.candlesticks tbody tr {
+  background-color: aliceblue;
+  text-align: left;
+  font-size: large;
+}
+
+table.candlesticks tr td {
+  padding: 10px 0 10px 10px;
+}
+
+table.candlesticks tbody tr:nth-child(even) {
+  background-color: #333333; /* or any color for even rows */
+}
+
+table.candlesticks tbody tr:nth-child(odd) {
+  background-color: black; /* or any color for odd rows */
+}
+
+.mono-font {
+  font-family: 'Courier New', monospace; /* Or any other monospaced font you like */
+}
+
+table.candlesticks tbody tr:hover {
+  background-color: #444444;
+
+  font-weight: bold;
+  font-size: larger;
 }
