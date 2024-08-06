@@ -14,8 +14,8 @@ public class CandleSticksController : ControllerBase
 	}
 
 	[HttpGet]
-	public IActionResult Get([FromQuery] CandleSticksGetRequest? request)
+	public IActionResult Get()
 	{
-		return Ok(_candleSticksService.GetCandleSticks(request));
+		return Ok(_candleSticksService.GetCandleSticks());
 	}
 }

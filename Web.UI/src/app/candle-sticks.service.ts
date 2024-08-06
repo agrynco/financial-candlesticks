@@ -1,6 +1,8 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import {Injectable} from '@angular/core';
+import {HttpClient, HttpParams} from '@angular/common/http';
+import {Observable} from 'rxjs';
+import {CandleSticksGetRequest} from "./candle-sticks-get.request";
+import {CandleStick} from "./candle.stick";
 
 @Injectable({
   providedIn: 'root'
@@ -11,32 +13,23 @@ export class CandleSticksService {
 
   constructor(private http: HttpClient) { }
 
-  getCandleSticks(request?: CandleSticksGetRequest): Observable<any> {
+  getCandleSticks(request?: CandleSticksGetRequest): Observable<CandleSticksGetResponse> {
     let params = new HttpParams();
 
-    // Add the properties of the request object to the params
-    if (request) {
-      for (let key in request) {
-        if (request[key] !== undefined && request[key] !== null) {
-          params = params.append(key, request[key]);
+    if(request) {
+      for (let [key, value] of Object.entries(request)) {
+        if (value !== undefined && value !== null) {
+          params = params.set(key, value);
         }
       }
     }
 
-    return this.http.get(this.baseUrl + 'candlesticks', { params: params });
+    return this.http.get<CandleSticksGetResponse>(this.baseUrl + 'candlesticks');
   }
 }
 
-export interface CandleSticksGetRequest {
-  startDate?: string;
-  endDate?: string;
+export interface CandleSticksGetResponse {
+  candleSticks: CandleStick[];
 }
 
-export interface CandleStick {
-  close: number;
-  closeTime: Date;
-  high: number;
-  low: number;
-  open: number;
-  openTime: Date;
-}
+

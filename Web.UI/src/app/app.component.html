@@ -2,13 +2,24 @@
 
 <table style="width: 100%">
   <thead>
-    <tr>
-      <th>Close</th>
-      <th>Close Time</th>
-      <th>High</th>
-      <th>Low</th>
-      <th>Open</th>
-      <th>Open Time</th>
-    </tr>
+  <tr>
+    <th>Open</th>
+    <th>Open Time</th>
+    <th>Open</th>
+    <th>Close</th>
+    <th>High</th>
+    <th>Low</th>
+  </tr>
   </thead>
+  <tbody>
+  <tr *ngFor="let candle of candleSticks"
+      [ngClass]="{ 'going-up': candle.close > candle.open, 'going-down': candle.close < candle.open }">
+    <td>{{ candle.open }}</td>
+    <td>{{ candle.openTime }}</td>
+    <td>{{ candle.close }}</td>
+    <td>{{ candle.closeTime }}</td>
+    <td>{{ candle.high }}</td>
+    <td>{{ candle.low }}</td>
+  </tr>
+  </tbody>
 </table>

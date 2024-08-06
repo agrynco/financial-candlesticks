@@ -3,6 +3,14 @@ using Services.CandleSticks;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddCors(options =>
+{
+	options.AddPolicy("AllowAllOrigins",
+		builder => builder.AllowAnyOrigin()
+			.AllowAnyHeader()
+			.AllowAnyMethod());
+});
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -25,10 +33,13 @@ if (app.Environment.IsDevelopment())
 	app.UseDeveloperExceptionPage();
 }
 
+app.UseCors("AllowAllOrigins");
+
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
 
 app.UseHttpsRedirection();
 
+app.Urls.Add("http://localhost:5000");
 app.Run();
